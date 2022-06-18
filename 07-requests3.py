@@ -1,3 +1,4 @@
+from codecs import ignore_errors
 import requests
 
 url = "http://172.107.178.62:3000/server/"
@@ -17,3 +18,4 @@ print(data[0]['server_name'], data[0]['prim_appl_info'])
 # print(data["joke"])
 # print(f"status: {data['status']}")
 
+Hello test ignore_errors
