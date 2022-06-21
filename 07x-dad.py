@@ -1,10 +1,10 @@
 """
 Dad Joke:  A program that fetches (called requests in python) a JSON data.  In this case, we are puling dad jokes.  
 Obtain user input on a topic and the program filters the joke based on the topic.
+Credit: Colt Steele Mega
 """
-
-from random import randint
 import requests
+from random import randint
 
 url = "https://icanhazdadjoke.com/search"
 
