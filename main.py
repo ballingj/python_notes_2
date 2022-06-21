@@ -11,7 +11,8 @@ from employee import Manager
 from employee import Attendant
 from employee import Cook
 from employee import Mechanic
-
+from reporting import AccountingReport
+from reporting import StaffingReport
 
 # now we have to add first and last name data to distinguish two people with same name
 employees = [
@@ -25,22 +26,13 @@ employees = [
     Mechanic("Chuck", "Rainey", 1800),
 ]
 
-# third section - we are refactoring again to change to first and last name
+# Loop through the available reports
 
-def print_accounting_report():
-    print("Accounting")
-    print("==========")
-    for e in employees:
-        print(f"{e.get_full_name()}, {e.salary}")
+reports = [
+    AccountingReport(employees),
+    StaffingReport(employees)
+]
 
-
-def print_staffing_report():
-    print("Staffing")
-    print("=========")
-    for e in employees:
-        print(f"{e.get_full_name()}, {e.job_title}")
-
-
-print_accounting_report()
-print()  # empty line
-print_staffing_report()
+for r in reports:
+    r.print_report()
+    print()
