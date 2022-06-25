@@ -1,11 +1,12 @@
 ##############################################
-# Polymorphism 1 - first refactor the Reporting module to eliminate duplicate codes
-# We are using the inheritance toolbox to create Superclass and subclass
+# Polymorphism 2 - refactor the reporting module to share the method name "print_report"
+# polymorphism allows you to share the same method name, but allows to behave differently based on what class was
+# called.
 # OOP with Python - Loek van den Ouweland
 ####################################################
 
 ###################################################################################
-# Main.py - Refactor the printing report so we can loop through an available Reports
+# main.py - Refactor the printing report so we can loop through an available Reports
 ########################################################################################
 
 """ When code grows, code changes.  Evaluating this code reveals that this 
@@ -22,10 +23,10 @@ from reporting import StaffingReport
 
 # now we have to add first and last name data to distinguish two people with same name
 employees = [
-    Manager("Vera", "Scmidt", 2000),
+    Manager("Vera", "Schmidt", 2000),
     Attendant("Chuck", "Norris", 1800),
     Attendant("Samantha", "Carrington", 1800),
-    Cook("Roberto", "Jacketti", 1800),
+    Cook("Roberto", "Jacketti", 2100),
     Mechanic("Dave", "DreiBig", 2200),
     Mechanic("Tina", "River", 2300),
     Mechanic("Ringo", "Rama", 1900),

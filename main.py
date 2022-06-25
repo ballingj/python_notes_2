@@ -1,11 +1,6 @@
-# Refactor - main.py
+# main.py - add scheduled start and end time to employee
 # OOP with Python - Loek van den Ouweland
 ###########################
-
-""" When code grows, code changes.  Evaluating this code reveals that this 
-codes must pe separated into three separate sections. 
-"""
-# after moving the classes, we have to import them here before we can use them
 
 from employee import Manager
 from employee import Attendant
@@ -13,26 +8,32 @@ from employee import Cook
 from employee import Mechanic
 from reporting import AccountingReport
 from reporting import StaffingReport
+from reporting import ScheduleReport
+from shift import MorningShift
+from shift import AfternoonShift
+from shift import NightShift
 
-# now we have to add first and last name data to distinguish two people with same name
+
 employees = [
-    Manager("Vera", "Scmidt", 2000),
-    Attendant("Chuck", "Norris", 1800),
-    Attendant("Samantha", "Carrington", 1800),
-    Cook("Roberto", "Jacketti", 1800),
-    Mechanic("Dave", "DreiBig", 2200),
-    Mechanic("Tina", "River", 2300),
-    Mechanic("Ringo", "Rama", 1900),
-    Mechanic("Chuck", "Rainey", 1800),
+    Manager("Vera", "Schmidt", 2000, MorningShift()),
+    Attendant("Chuck", "Norris", 1800, MorningShift()),
+    Attendant("Samantha", "Carrington", 1800, AfternoonShift()),
+    Cook("Roberto", "Jacketti", 2100, MorningShift()),
+    Mechanic("Dave", "DreiBig", 2200, MorningShift()),
+    Mechanic("Tina", "River", 2300, MorningShift()),
+    Mechanic("Ringo", "Rama", 1900, AfternoonShift()),
+    Mechanic("Chuck", "Rainey", 1800, NightShift()),
 ]
 
 # Loop through the available reports
 
 reports = [
     AccountingReport(employees),
-    StaffingReport(employees)
+    StaffingReport(employees),
+    ScheduleReport(employees),
 ]
 
 for r in reports:
     r.print_report()
     print()
+    

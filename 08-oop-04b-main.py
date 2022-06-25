@@ -14,10 +14,10 @@ from employee import Mechanic
 
 # now we have to add first and last name data to distinguish two people with same name
 employees = [
-    Manager("Vera", "Scmidt", 2000),
+    Manager("Vera", "Schmidt", 2000),
     Attendant("Chuck", "Norris", 1800),
     Attendant("Samantha", "Carrington", 1800),
-    Cook("Roberto", "Jacketti", 1800),
+    Cook("Roberto", "Jacketti", 2100),
     Mechanic("Dave", "DreiBig", 2200),
     Mechanic("Tina", "River", 2300),
     Mechanic("Ringo", "Rama", 1900),

@@ -1,9 +1,6 @@
 #############################################################
 # reporting.py
-# After refactoring report to create a Super class
-# and subclass...polymorphism allows us for each subclass to have the same
-# method name.   change print_accounting_report to print_report
-# do the same for StaffingReport
+# Add the new ScheduleReport class inherited from Report
 ###############################################################
 
 class Report:
@@ -25,3 +22,10 @@ class StaffingReport(Report):
         print("=========")
         for e in self._emp_list:
             print(f"{e.get_full_name()}, {e.job_title}")
+
+class ScheduleReport(Report):
+    def print_report(self):
+        print("Schedule")
+        print("=========")
+        for e in self._emp_list:
+            print(f"{e.get_full_name()}, {e.shift.get_shift_info()}")
