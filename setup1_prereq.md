@@ -36,7 +36,7 @@ source ./env/bin/activate
 ```
 ### Activate for Windows
 ```sh
-env\scripts\activate
+source env\scripts\activate
 ```
 ### Deactivate
 ```sh
